@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- A television, not a weather glyph: the project's subject is the screen.
+       Amber sun on the app's night gradient, in the same filled geometric style
+       as the in-app icons. -->
+  <rect width="32" height="32" rx="5" fill="#0a1230"/>
+  <rect x="4" y="7" width="24" height="16" rx="2.5" fill="#16214d" stroke="#3a4d8a" stroke-width="1.2"/>
+  <circle cx="13" cy="14" r="4" fill="#ffd257"/>
+  <g fill="#eaf0ff">
+    <circle cx="19" cy="17" r="3.4"/>
+    <rect x="14.5" y="17" width="9" height="3.6" rx="1.8"/>
+  </g>
+  <rect x="12" y="25" width="8" height="1.6" rx="0.8" fill="#3a4d8a"/>
+</svg>

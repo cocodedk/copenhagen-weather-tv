@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SEO keywords:
+     primary:   samsung tv weather app
+     secondary: tizen weather app, copenhagen weather, sideload wgt
+     intent:    informational / navigational
+-->
+<title>Copenhagen Weather — a Samsung TV weather app for Tizen</title>
+<meta name="description" content="A Copenhagen weather app for Samsung Tizen TVs: 1920×1080, driven by the remote, no API key and no build step. See the live forecast and put the signed .wgt on your own set.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://cocodedk.github.io/copenhagen-weather-tv/">
+<link rel="alternate" hreflang="en" href="https://cocodedk.github.io/copenhagen-weather-tv/">
+<link rel="alternate" hreflang="da" href="https://cocodedk.github.io/copenhagen-weather-tv/da/">
+<link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/copenhagen-weather-tv/fa/">
+<link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/copenhagen-weather-tv/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Copenhagen Weather">
+<meta property="og:title" content="Copenhagen Weather — a Samsung TV weather app for Tizen">
+<meta property="og:description" content="1920×1080, driven by the remote, no API key and no build step. See the live forecast and put the signed .wgt on your own set.">
+<meta property="og:url" content="https://cocodedk.github.io/copenhagen-weather-tv/">
+<meta property="og:image" content="https://cocodedk.github.io/copenhagen-weather-tv/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A television showing Copenhagen's current temperature, condition and seven-day forecast on a deep navy screen.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="da_DK">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Copenhagen Weather — a Samsung TV weather app for Tizen">
+<meta name="twitter:description" content="1920×1080, driven by the remote, no API key and no build step.">
+<meta name="twitter:image" content="https://cocodedk.github.io/copenhagen-weather-tv/og.png">
+<meta name="twitter:image:alt" content="A television showing Copenhagen's weather on a deep navy screen.">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Copenhagen Weather",
+  "description": "A Copenhagen weather app for Samsung Tizen televisions. Current conditions, 24-hour outlook and a seven-day forecast, navigated entirely with the remote.",
+  "url": "https://cocodedk.github.io/copenhagen-weather-tv/",
+  "downloadUrl": "https://github.com/cocodedk/copenhagen-weather-tv",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Samsung Tizen 6.0",
+  "inLanguage": "en",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": {
+    "@type": "Person",
+    "name": "Babak Bandpey",
+    "url": "https://cocode.dk",
+    "sameAs": ["https://linkedin.com/in/babakbandpey", "https://github.com/cocodedk"]
+  },
+  "codeRepository": "https://github.com/cocodedk/copenhagen-weather-tv"
+}
+</script>
+</head>
+<body>
+<!--SPRITE-->
+
+<header class="topbar">
+  <div class="shell">
+    <span class="wordmark">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#i-partly"/></svg>
+      Copenhagen Weather
+    </span>
+    <nav aria-label="Language and source">
+      <a href="da/" hreflang="da">Dansk</a>
+      <a href="fa/" hreflang="fa">فارسی</a>
+      <a href="https://github.com/cocodedk/copenhagen-weather-tv">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="shell">
+      <!-- The hero is the television, because that is what the project is.
+           Data lands here from the same Open-Meteo request the TV app makes. -->
+      <div class="tv">
+        <div class="tv-panel">
+          <div class="tv-screen">
+            <div class="now">
+              <svg class="now-icon" id="now-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-cloudy"/></svg>
+              <div>
+                <div class="now-temp" id="now-temp">--<span>°C</span></div>
+                <div class="now-cond" id="now-cond">Fetching the forecast</div>
+                <div class="now-place" id="now-place">Copenhagen, Denmark</div>
+              </div>
+            </div>
+            <dl class="now-tiles" id="now-tiles"></dl>
+            <p class="tv-status" id="now-status"><span class="dot"></span><span id="now-status-text">Connecting</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow on-amber">Samsung Tizen · 2021 sets and newer</p>
+        <h1>Copenhagen weather, <strong>built for the television</strong>.</h1>
+        <p class="lede">Full-screen at 1920×1080, navigated with the remote, and running on a browser
+          engine that stopped updating in 2021. One signed <code>.wgt</code> that you sideload onto the set.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#install">Put it on your TV</a>
+          <a class="btn btn-ghost" href="https://github.com/cocodedk/copenhagen-weather-tv">Read the source</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="forecast">
+    <div class="shell">
+      <h2>The next few days</h2>
+      <p class="section-lede">Straight from Open-Meteo. No key, no proxy, the same request the TV makes.</p>
+      <div class="hours" id="hours" aria-label="Hourly forecast"></div>
+      <ul class="days" id="days"></ul>
+    </div>
+  </section>
+
+  <section id="demo">
+    <div class="shell">
+      <h2>Drive it with the arrow keys</h2>
+      <p class="section-lede">This is the app itself, not a recording. The same files that go into the
+        <code>.wgt</code>. Arrow keys move, Enter selects, and the four buttons below are the colour
+        keys on the remote.</p>
+      <div class="demo-frame" id="demo-frame">
+        <iframe id="demo-iframe" src="demo/index.html" title="Copenhagen Weather running as it does on the TV" loading="lazy"></iframe>
+      </div>
+      <div class="keys">
+        <button class="keycap k-red" data-key="403" type="button"><i></i>Refresh</button>
+        <button class="keycap k-green" data-key="404" type="button"><i></i>°C / °F</button>
+        <button class="keycap k-yellow" data-key="405" type="button"><i></i>Theme</button>
+        <button class="keycap k-blue" data-key="406" type="button"><i></i>Diagnostics</button>
+      </div>
+      <p class="demo-note">Click the frame first so it takes the keyboard. On a phone the app still
+        renders at TV size, so the text comes out tiny. That is rather the point.</p>
+    </div>
+  </section>
+
+  <section id="engineering">
+    <div class="shell">
+      <h2>Why it looks like this</h2>
+      <p class="section-lede">Three constraints did most of the design work.</p>
+      <ul class="notes">
+        <li class="note">
+          <h3>The engine is frozen</h3>
+          <p>A TV's Chromium is tied to its firmware and never updates. A 2021 set is stuck on
+            Chromium 76, so <code>flex gap</code>, <code>clamp()</code> and <code>?.</code> are all
+            off the table. A lint checks every file against that ceiling on each build.</p>
+        </li>
+        <li class="note">
+          <h3>No key, no server</h3>
+          <p>Open-Meteo needs no API key and allows cross-origin requests, so the app calls it
+            directly. The last good response is kept, and a cold start with no network still draws
+            a forecast.</p>
+        </li>
+        <li class="note">
+          <h3>Debugging blind</h3>
+          <p>A retail set has no DevTools, and <code>sdb shell</code> comes back empty. So the app
+            carries its own instruments: a build stamp in the corner and a diagnostics overlay on
+            the blue key.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="shell">
+      <h2>Put it on your TV</h2>
+      <p class="section-lede">You need Tizen Studio's CLI tools, though not the IDE. Roughly ten
+        minutes, and most of that is waiting for the TV to restart.</p>
+      <ol class="steps">
+        <li>
+          <h3>Turn on developer mode</h3>
+          <p>Open the Apps panel on the TV, type <strong>12345</strong>, switch Developer mode on,
+            enter this computer's IP address, then restart the set.</p>
+        </li>
+        <li>
+          <h3>Make a signing profile</h3>
+          <p>A <code>.wgt</code> has to be signed. A self-signed author certificate is enough for
+            sideloading onto most sets.</p>
+<pre>tizen certificate -a me -p PASSWORD -f me -- certs
+tizen security-profiles add -n MyTV -a certs/me.p12 -p PASSWORD</pre>
+        </li>
+        <li>
+          <h3>Package and install</h3>
+          <p>One command lints, packages, installs and launches. Use your TV's IP address.</p>
+<pre>git clone https://github.com/cocodedk/copenhagen-weather-tv
+cd copenhagen-weather-tv
+TIZEN_PROFILE=MyTV ./build.sh --install 192.168.0.201</pre>
+        </li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell">
+    <p>Apache-2.0 &nbsp;|&nbsp; © 2026 <a href="https://cocode.dk" target="_blank" rel="noreferrer">Cocode</a> &nbsp;|&nbsp; Created by <a href="https://linkedin.com/in/babakbandpey" target="_blank" rel="noreferrer">Babak Bandpey</a></p>
+    <p style="margin-top:6px">Forecast by <a href="https://open-meteo.com" target="_blank" rel="noreferrer">Open-Meteo</a>.</p>
+  </div>
+</footer>
+
+<script src="vendor/wmo.js"></script>
+<script src="vendor/units.js"></script>
+<script src="vendor/api.js"></script>
+<script src="js/live.js"></script>
+</body>
+</html>

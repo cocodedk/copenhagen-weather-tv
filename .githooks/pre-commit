@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+# Fast gate only. The Chromium-ceiling lint is the one check that must never be
+# skipped, and it needs no browser, so it runs on every commit. The full suite
+# (which drives a real Chromium) runs at pre-push instead.
+npm run compat

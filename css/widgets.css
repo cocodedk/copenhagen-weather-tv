@@ -1,0 +1,112 @@
+/* Hourly strip, day cards, footer, overlays, focus ring.
+   No flex `gap` — horizontal spacing is margin-right on every child but the last. */
+
+/* ---------- hourly strip ---------- */
+#hourly-block { height: 226px; margin-top: 18px; }
+#hourly-strip {
+  height: 186px; display: flex; align-items: stretch;
+  overflow-x: auto; overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.hour {
+  width: 118px; height: 178px; flex-shrink: 0; margin-right: 12px;
+  background: var(--tile-2); border-radius: 14px;
+  padding: 14px 4px 12px 4px; text-align: center;
+}
+.hour.now { background: var(--tile); box-shadow: inset 0 -5px 0 var(--accent); }
+.hour-t { font-size: 24px; color: var(--fg-dim); }
+.hour-ic { width: 46px; height: 46px; margin: 8px auto 0 auto; color: var(--accent); }
+.hour-tp { font-size: 34px; font-weight: 600; margin-top: 6px; }
+.hour-pp { font-size: 21px; color: var(--wet); height: 26px; margin-top: 2px; }
+.hour-pp.dry { color: transparent; }
+
+/* ---------- 7-day row ---------- */
+#daily-block { height: 254px; margin-top: 18px; }
+#daily-row { height: 214px; display: flex; align-items: stretch; }
+.day {
+  flex: 1 1 0; height: 214px; margin-right: 12px;
+  background: var(--tile-2); border-radius: 18px;
+  padding: 14px 10px 12px 10px; text-align: center; overflow: hidden;
+}
+.day:last-child { margin-right: 0; }
+.day.selected { background: var(--sel-bg); box-shadow: inset 0 -6px 0 var(--accent); }
+.day-n { font-size: 27px; font-weight: 600; }
+.day-d { font-size: 21px; color: var(--fg-dim); margin-top: 1px; }
+.day-ic { width: 58px; height: 58px; margin: 8px auto 0 auto; color: var(--accent); }
+.day-t { margin-top: 8px; white-space: nowrap; }
+.day-hi { font-size: 33px; font-weight: 600; }
+.day-lo { font-size: 26px; color: var(--fg-dim); margin-left: 10px; }
+.day-pp { font-size: 21px; color: var(--wet); height: 26px; margin-top: 2px; }
+.day-pp.dry { color: transparent; }
+
+/* ---------- focus ring (custom: :focus-visible needs Chrome 86) ---------- */
+.focused {
+  background: var(--focus-bg);
+  box-shadow: 0 0 0 4px var(--focus), 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+.day.selected.focused { box-shadow: 0 0 0 4px var(--focus), inset 0 -6px 0 var(--accent); }
+.hour.now.focused { box-shadow: 0 0 0 4px var(--focus), inset 0 -5px 0 var(--accent); }
+
+/* ---------- footer ---------- */
+#ftr {
+  margin-top: auto; height: 40px; display: flex;
+  justify-content: space-between; align-items: center;
+  font-size: 23px; color: var(--fg-dim);
+}
+#legend { white-space: nowrap; }
+.ck {
+  display: inline-block; width: 17px; height: 17px; border-radius: 50%;
+  margin: 0 8px 0 26px; vertical-align: -1px;
+}
+#legend > .ck:first-child { margin-left: 0; }
+.ck-r { background: #e2504a; } .ck-g { background: #46b46e; }
+.ck-y { background: #e8c145; } .ck-b { background: #4b86e8; }
+.legend-sep { margin: 0 14px; opacity: 0.5; }
+.legend-dim { opacity: 0.75; }
+#status { white-space: nowrap; }
+#status.stale { color: var(--accent); }
+#status.err { color: #ff9b93; }
+
+/* ---------- overlays ----------
+   Every id below sets its own `display`, so the plain [hidden] rule loses on
+   specificity (id > attribute). Each needs an explicit !important override. */
+#toast {
+  position: fixed; left: 50%; bottom: 76px; margin-left: -340px; width: 680px;
+  padding: 20px 28px; border-radius: 14px; text-align: center;
+  background: rgba(0, 0, 0, 0.82); color: #fff; font-size: 28px; z-index: 60;
+}
+#toast[hidden] { display: none !important; }
+
+#dialog {
+  position: fixed; left: 0; top: 0; width: 1920px; height: 1080px;
+  background: rgba(0, 0, 0, 0.74);
+  display: flex; align-items: center; justify-content: center; z-index: 80;
+}
+#dialog[hidden] { display: none !important; }
+#dialog-box {
+  width: 760px; padding: 54px 48px 44px 48px; border-radius: 22px;
+  background: #16214d; color: #eaf0ff; text-align: center;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+}
+#dialog-title { font-size: 40px; font-weight: 600; margin-bottom: 38px; }
+#dialog-actions { display: flex; justify-content: center; }
+.dlg-btn {
+  width: 260px; padding: 22px 0; margin: 0 12px; border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12); font-size: 32px; font-weight: 600;
+}
+
+#debug {
+  position: fixed; left: 40px; top: 40px; width: 980px; max-height: 1000px;
+  padding: 24px 28px; border-radius: 14px; overflow: hidden;
+  background: rgba(0, 0, 0, 0.88); color: #b9f6ca; z-index: 90;
+  font-family: 'Courier New', monospace; font-size: 20px; line-height: 1.5;
+  white-space: pre-wrap; word-break: break-all;
+}
+#debug[hidden] { display: none !important; }
+
+/* Bump this every deploy: a reinstall does not always reload the page, and this
+   is the only on-screen proof the TV is running the build you just pushed. */
+#build-stamp {
+  position: fixed; right: 8px; bottom: 4px;
+  font-size: 16px; color: var(--fg); opacity: 0.28; z-index: 95;
+}

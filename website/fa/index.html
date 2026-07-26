@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copenhagen Weather — اپلیکیشن آب‌وهوا برای تلویزیون سامسونگ</title>
+<meta name="description" content="اپلیکیشن آب‌وهوای کپنهاگ برای تلویزیون‌های سامسونگ با تایزن: تمام‌صفحه ۱۹۲۰×۱۰۸۰، کنترل با ریموت، بدون کلید API و بدون مرحله‌ی بیلد. پیش‌بینی زنده را ببینید و فایل امضاشده را روی تلویزیون خودتان نصب کنید.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://cocodedk.github.io/copenhagen-weather-tv/fa/">
+<link rel="alternate" hreflang="en" href="https://cocodedk.github.io/copenhagen-weather-tv/">
+<link rel="alternate" hreflang="da" href="https://cocodedk.github.io/copenhagen-weather-tv/da/">
+<link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/copenhagen-weather-tv/fa/">
+<link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/copenhagen-weather-tv/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Copenhagen Weather">
+<meta property="og:title" content="Copenhagen Weather — اپلیکیشن آب‌وهوا برای تلویزیون سامسونگ">
+<meta property="og:description" content="تمام‌صفحه ۱۹۲۰×۱۰۸۰، کنترل با ریموت، بدون کلید API و بدون مرحله‌ی بیلد.">
+<meta property="og:url" content="https://cocodedk.github.io/copenhagen-weather-tv/fa/">
+<meta property="og:image" content="https://cocodedk.github.io/copenhagen-weather-tv/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="تلویزیونی که دما و پیش‌بینی هفت‌روزه‌ی کپنهاگ را روی صفحه‌ی سرمه‌ای نشان می‌دهد.">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Copenhagen Weather — آب‌وهوا روی تلویزیون سامسونگ">
+<meta name="twitter:description" content="تمام‌صفحه ۱۹۲۰×۱۰۸۰، کنترل با ریموت، بدون کلید API.">
+<meta name="twitter:image" content="https://cocodedk.github.io/copenhagen-weather-tv/og.png">
+<meta name="twitter:image:alt" content="تلویزیونی که آب‌وهوای کپنهاگ را نشان می‌دهد.">
+
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="../styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Copenhagen Weather",
+  "description": "اپلیکیشن آب‌وهوای کپنهاگ برای تلویزیون‌های سامسونگ با سیستم تایزن. وضعیت فعلی، ۲۴ ساعت آینده و پیش‌بینی هفت‌روزه، همه با ریموت کنترل.",
+  "url": "https://cocodedk.github.io/copenhagen-weather-tv/fa/",
+  "downloadUrl": "https://github.com/cocodedk/copenhagen-weather-tv",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Samsung Tizen 6.0",
+  "inLanguage": "fa",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": {
+    "@type": "Person",
+    "name": "بابک بندپی",
+    "url": "https://cocode.dk",
+    "sameAs": ["https://linkedin.com/in/babakbandpey", "https://github.com/cocodedk"]
+  },
+  "codeRepository": "https://github.com/cocodedk/copenhagen-weather-tv"
+}
+</script>
+</head>
+<body>
+<!--SPRITE-->
+
+<header class="topbar">
+  <div class="shell">
+    <span class="wordmark">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#i-partly"/></svg>
+      Copenhagen Weather
+    </span>
+    <nav aria-label="زبان و کد منبع">
+      <a href="../" hreflang="en">English</a>
+      <a href="../da/" hreflang="da">Dansk</a>
+      <a href="https://github.com/cocodedk/copenhagen-weather-tv">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="shell">
+      <div class="tv">
+        <div class="tv-panel">
+          <div class="tv-screen">
+            <div class="now">
+              <svg class="now-icon" id="now-icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-cloudy"/></svg>
+              <div>
+                <div class="now-temp" id="now-temp">--<span>°C</span></div>
+                <div class="now-cond" id="now-cond">در حال دریافت پیش‌بینی</div>
+                <div class="now-place" id="now-place">کپنهاگ، دانمارک</div>
+              </div>
+            </div>
+            <dl class="now-tiles" id="now-tiles"></dl>
+            <p class="tv-status" id="now-status"><span class="dot"></span><span id="now-status-text">اتصال</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow on-amber">سامسونگ تایزن · تلویزیون‌های ۲۰۲۱ و جدیدتر</p>
+        <h1>آب‌وهوای کپنهاگ، <strong>ساخته‌شده برای تلویزیون</strong>.</h1>
+        <p class="lede">تمام‌صفحه در ۱۹۲۰×۱۰۸۰، کنترل با ریموت، و اجرا روی موتور مرورگری که از سال
+          ۲۰۲۱ دیگر به‌روز نشده است. یک فایل <code>.wgt</code> امضاشده که مستقیم روی تلویزیون نصب می‌شود.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#install">روی تلویزیون خودتان نصب کنید</a>
+          <a class="btn btn-ghost" href="https://github.com/cocodedk/copenhagen-weather-tv">کد منبع</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="forecast">
+    <div class="shell">
+      <h2>روزهای آینده</h2>
+      <p class="section-lede">مستقیم از Open-Meteo. بدون کلید، بدون واسط، همان درخواستی که تلویزیون می‌فرستد.</p>
+      <div class="hours" id="hours" aria-label="پیش‌بینی ساعتی"></div>
+      <ul class="days" id="days"></ul>
+    </div>
+  </section>
+
+  <section id="demo">
+    <div class="shell">
+      <h2>با کلیدهای جهت‌دار کنترلش کنید</h2>
+      <p class="section-lede">این خودِ اپلیکیشن است، نه فیلم. همان فایل‌هایی که داخل بسته‌ی
+        <code>.wgt</code> قرار می‌گیرند. کلیدهای جهت‌دار جابه‌جا می‌کنند و Enter انتخاب می‌کند.
+        چهار دکمه‌ی زیر همان کلیدهای رنگی ریموت هستند.</p>
+      <div class="demo-frame" id="demo-frame">
+        <iframe id="demo-iframe" src="../demo/index.html" title="اجرای Copenhagen Weather همان‌طور که روی تلویزیون دیده می‌شود" loading="lazy"></iframe>
+      </div>
+      <div class="keys">
+        <button class="keycap k-red" data-key="403" type="button"><i></i>به‌روزرسانی</button>
+        <button class="keycap k-green" data-key="404" type="button"><i></i>°C / °F</button>
+        <button class="keycap k-yellow" data-key="405" type="button"><i></i>پوسته</button>
+        <button class="keycap k-blue" data-key="406" type="button"><i></i>عیب‌یابی</button>
+      </div>
+      <p class="demo-note">اول روی قاب کلیک کنید تا کلیدها را بگیرد. روی گوشی، اپلیکیشن در اندازه‌ی
+        تلویزیون نشان داده می‌شود، پس متن کوچک می‌ماند. و همین نکته‌ی ماجراست.</p>
+    </div>
+  </section>
+
+  <section id="engineering">
+    <div class="shell">
+      <h2>چرا این شکلی است</h2>
+      <p class="section-lede">سه محدودیت، هر تصمیمی را در این اپلیکیشن شکل داده است.</p>
+      <ul class="notes">
+        <li class="note">
+          <h3>موتور مرورگر ثابت مانده</h3>
+          <p>کرومیوم تلویزیون به فریمور آن گره خورده و هرگز به‌روز نمی‌شود. تلویزیون ۲۰۲۱ روی
+            کرومیوم ۷۶ مانده است. یعنی <code>flex gap</code>، <code>clamp()</code> و <code>?.</code>
+            کنار می‌روند، و یک لینتر در هر بیلد همه‌ی فایل‌ها را با همین سقف می‌سنجد.</p>
+        </li>
+        <li class="note">
+          <h3>بدون کلید، بدون سرور</h3>
+          <p>Open-Meteo کلید API نمی‌خواهد و درخواست از دامنه‌ی دیگر را می‌پذیرد، پس اپلیکیشن خودش
+            داده را می‌گیرد. آخرین پاسخ سالم ذخیره می‌شود و شروع بدون شبکه هم پیش‌بینی را نشان می‌دهد.</p>
+        </li>
+        <li class="note">
+          <h3>عیب‌یابی در تاریکی</h3>
+          <p>تلویزیون خانگی DevTools ندارد و <code>sdb shell</code> خروجی نمی‌دهد. پس اپلیکیشن ابزار
+            خودش را همراه دارد: یک مهر بیلد در گوشه‌ی صفحه و یک لایه‌ی عیب‌یابی روی کلید آبی.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="shell">
+      <h2>روی تلویزیون خودتان نصب کنید</h2>
+      <p class="section-lede">به ابزارهای خط فرمان Tizen Studio نیاز دارید، اما خودِ IDE لازم نیست.
+        حدود ده دقیقه، که بیشترش انتظار برای راه‌اندازی مجدد تلویزیون است.</p>
+      <ol class="steps">
+        <li>
+          <h3>حالت توسعه‌دهنده را روشن کنید</h3>
+          <p>در تلویزیون بخش Apps را باز کنید، <strong>۱۲۳۴۵</strong> را بزنید، Developer mode را روشن
+            کنید، نشانی IP این کامپیوتر را وارد کنید و تلویزیون را دوباره راه‌اندازی کنید.</p>
+        </li>
+        <li>
+          <h3>یک پروفایل امضا بسازید</h3>
+          <p>فایل <code>.wgt</code> باید امضا شود. یک گواهی خودامضا برای نصب روی بیشتر تلویزیون‌ها کافی است.</p>
+<pre>tizen certificate -a me -p PASSWORD -f me -- certs
+tizen security-profiles add -n MyTV -a certs/me.p12 -p PASSWORD</pre>
+        </li>
+        <li>
+          <h3>بسته‌بندی و نصب</h3>
+          <p>یک فرمان، لینت و بسته‌بندی و نصب و اجرا را انجام می‌دهد. نشانی IP تلویزیون خودتان را بگذارید.</p>
+<pre>git clone https://github.com/cocodedk/copenhagen-weather-tv
+cd copenhagen-weather-tv
+TIZEN_PROFILE=MyTV ./build.sh --install 192.168.0.201</pre>
+        </li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell">
+    <p>Apache-2.0 &nbsp;|&nbsp; © ۱۴۰۵ <a href="https://cocode.dk" target="_blank" rel="noreferrer">Cocode</a> &nbsp;|&nbsp; ساخته شده توسط <a href="https://linkedin.com/in/babakbandpey" target="_blank" rel="noreferrer">بابک بندپی</a></p>
+    <p style="margin-top:6px">داده‌ی پیش‌بینی از <a href="https://open-meteo.com" target="_blank" rel="noreferrer">Open-Meteo</a>.</p>
+  </div>
+</footer>
+
+<script src="../js/i18n/fa.js"></script>
+<script src="../vendor/wmo.js"></script>
+<script src="../vendor/units.js"></script>
+<script src="../vendor/api.js"></script>
+<script src="../js/live.js"></script>
+</body>
+</html>

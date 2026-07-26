@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets"
+        id="http://cocode.dk/CopenhagenWeather" version="1.0.0" viewmodes="maximized">
+  <tizen:application id="WxCph00001.CopenhagenWeather" package="WxCph00001" required_version="6.0"/>
+  <tizen:profile name="tv"/>
+  <content src="index.html"/>
+  <icon src="icon.png"/>
+  <name>Copenhagen Weather</name>
+  <description>Current conditions and 7-day forecast for Copenhagen</description>
+  <!-- network access: without <access> + a permissive CSP, fetch() to the API is blocked -->
+  <access origin="*" subdomains="true"/>
+  <tizen:content-security-policy>default-src * 'self' data: blob: 'unsafe-inline' 'unsafe-eval'; img-src * data: blob:; connect-src *;</tizen:content-security-policy>
+  <tizen:privilege name="http://tizen.org/privilege/internet"/>
+  <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+  <tizen:setting screen-orientation="landscape" background-support="disable"
+                 encryption="disable" hwkey-event="enable"/>
+</widget>

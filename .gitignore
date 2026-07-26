@@ -1,0 +1,16 @@
+# build output
+dist/
+_site/
+shots/
+*.wgt
+
+# signing artifacts — never commit these
+author-signature.xml
+signature*.xml
+.manifest.tmp
+.buildResult/
+*.p12
+certs/
+
+node_modules/
+.DS_Store

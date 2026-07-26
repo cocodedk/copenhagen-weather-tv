@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OG image source</title>
+<!-- Rendered to og.png at 1200x630 by tools/render-og.mjs.
+     Same television motif, ambient glow and type system as the site. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;600;700&display=swap">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden; position: relative;
+    background: #060c22;
+    background-image: linear-gradient(168deg, #060c22 0%, #1b2a5e 70%, #0b1533 100%);
+    color: #eaf0ff;
+    font-family: 'Archivo', system-ui, sans-serif;
+    display: flex; align-items: center; justify-content: center;
+  }
+  /* the ambient glow, tinted for drizzle like the live page would be */
+  body::before {
+    content: ''; position: absolute; left: 0; right: 0; top: 40px; height: 520px;
+    background: radial-gradient(58% 70% at 50% 45%, #63c8ff 0%, transparent 70%);
+    opacity: 0.4; filter: blur(50px);
+  }
+  .wrap { position: relative; width: 1040px; }
+  .brand {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 22px;
+    font-size: 17px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  }
+  .brand svg { width: 27px; height: 27px; color: #ffd257; }
+  .panel {
+    border-radius: 16px; padding: 9px;
+    background: linear-gradient(160deg, #253052 0%, #0d1329 100%);
+    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.62), 0 0 0 1px rgba(255, 255, 255, 0.09);
+  }
+  .screen {
+    border-radius: 10px; padding: 32px 36px;
+    background: linear-gradient(158deg, #0a1230 0%, #16214d 100%);
+    display: grid; grid-template-columns: 1.25fr 1fr; column-gap: 34px; align-items: center;
+  }
+  .now { display: flex; align-items: center; gap: 24px; }
+  .now svg { width: 116px; height: 116px; color: #ffd257; flex: none; }
+  .temp { font-size: 118px; font-weight: 200; line-height: 0.88; letter-spacing: -0.04em; }
+  .temp span { font-size: 44px; font-weight: 300; letter-spacing: 0; }
+  .cond { font-size: 27px; font-weight: 500; margin-top: 8px; }
+  .place { font-size: 17px; color: rgba(234, 240, 255, 0.66); margin-top: 3px; }
+  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tile { background: rgba(255, 255, 255, 0.075); border-radius: 11px; padding: 12px 14px; }
+  .tile b {
+    display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.13em;
+    text-transform: uppercase; color: rgba(234, 240, 255, 0.4);
+  }
+  .tile i { font-style: normal; font-size: 24px; font-weight: 600; }
+  .caption { margin-top: 26px; display: flex; align-items: baseline; justify-content: space-between; }
+  .caption h1 { font-size: 40px; font-weight: 300; letter-spacing: -0.02em; }
+  .caption h1 strong { font-weight: 700; }
+  .caption p { font-size: 15px; color: rgba(234, 240, 255, 0.5); text-align: right; line-height: 1.5; }
+</style>
+</head>
+<body>
+<svg width="0" height="0"><defs>
+  <symbol id="i-drizzle" viewBox="0 0 64 64">
+    <g fill="currentColor">
+      <circle cx="26" cy="22" r="10"/><circle cx="39" cy="26" r="8"/>
+      <rect x="15" y="26" width="33" height="12" rx="6"/>
+    </g>
+    <g stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none">
+      <line x1="22" y1="45" x2="20" y2="50"/><line x1="32" y1="45" x2="30" y2="50"/>
+      <line x1="42" y1="45" x2="40" y2="50"/>
+    </g>
+  </symbol>
+  <symbol id="i-partly" viewBox="0 0 64 64">
+    <circle cx="43" cy="20" r="9" fill="currentColor"/>
+    <g stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none">
+      <line x1="43" y1="3" x2="43" y2="7"/><line x1="58" y1="20" x2="62" y2="20"/>
+      <line x1="54.3" y1="9.7" x2="57" y2="7"/><line x1="31.7" y1="9.7" x2="29" y2="7"/>
+    </g>
+    <g fill="currentColor">
+      <circle cx="23" cy="35" r="10"/><circle cx="36" cy="38" r="8"/>
+      <rect x="13" y="38" width="31" height="12" rx="6"/>
+    </g>
+  </symbol>
+</defs></svg>
+
+<div class="wrap">
+  <div class="brand"><svg><use href="#i-partly"/></svg>Copenhagen Weather</div>
+
+  <div class="panel">
+    <div class="screen">
+      <div class="now">
+        <svg><use href="#i-drizzle"/></svg>
+        <div>
+          <div class="temp">17<span>°C</span></div>
+          <div class="cond">Dense drizzle</div>
+          <div class="place">Copenhagen, Denmark · 23:00</div>
+        </div>
+      </div>
+      <div class="tiles">
+        <div class="tile"><b>Feels like</b><i>17°C</i></div>
+        <div class="tile"><b>Wind</b><i>2.5 m/s</i></div>
+        <div class="tile"><b>Humidity</b><i>84%</i></div>
+        <div class="tile"><b>Rain chance</b><i>100%</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption">
+    <h1>Built for the <strong>television</strong>.</h1>
+    <p>Samsung Tizen · 1920×1080 · no API key<br>
+      Babak Bandpey · cocode.dk</p>
+  </div>
+</div>
+</body>
+</html>

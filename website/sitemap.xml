@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://cocodedk.github.io/copenhagen-weather-tv/</loc>
+    <lastmod>__LASTMOD__</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://cocodedk.github.io/copenhagen-weather-tv/da/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/copenhagen-weather-tv/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
+  </url>
+  <url>
+    <loc>https://cocodedk.github.io/copenhagen-weather-tv/da/</loc>
+    <lastmod>__LASTMOD__</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://cocodedk.github.io/copenhagen-weather-tv/da/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/copenhagen-weather-tv/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
+  </url>
+  <url>
+    <loc>https://cocodedk.github.io/copenhagen-weather-tv/fa/</loc>
+    <lastmod>__LASTMOD__</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://cocodedk.github.io/copenhagen-weather-tv/da/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/copenhagen-weather-tv/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
+  </url>
+</urlset>

@@ -1,0 +1,24 @@
+{
+  "name": "copenhagen-weather-tv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Copenhagen weather for Samsung Tizen TVs — a self-contained .wgt with no API key and no build step",
+  "scripts": {
+    "compat": "node tools/compat-lint.mjs",
+    "smoke": "node tools/smoke.mjs",
+    "site": "node tools/build-site.mjs",
+    "site-check": "node tools/site-check.mjs",
+    "og": "node tools/render-og.mjs",
+    "check": "npm run compat && npm run smoke && npm run site && npm run site-check",
+    "live-check": "LIVE=1 npm run smoke && npm run site && LIVE=1 npm run site-check",
+    "serve-site": "npm run site && python3 -m http.server -d _site 8080",
+    "package": "bash build.sh",
+    "install-tv": "bash build.sh --install"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.0"
+  }
+}

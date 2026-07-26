@@ -1,0 +1,39 @@
+# Copenhagen Weather
+
+> A Samsung Tizen TV app showing Copenhagen's weather: current conditions, a
+> 24-hour outlook and a 7-day forecast, navigated entirely with the remote.
+> Packaged as a signed .wgt and sideloaded onto the set. No API key, no server,
+> no build step.
+
+The interesting constraint is the target: a TV's Chromium is frozen to its
+firmware and never updates, so the app is authored to Chromium 69 (covering the
+Chromium 76 of Tizen 6.0) with no transpiler. A lint enforces that ceiling,
+because the desktop test suite runs a modern browser and cannot catch a violation.
+
+Weather data comes from Open-Meteo (no key, CORS-open). The last good response is
+cached in localStorage, so a cold start with no network still draws a forecast.
+
+## Docs
+
+- [README](https://github.com/cocodedk/copenhagen-weather-tv/blob/main/README.md): what it is, how to install it on a TV, the engine-ceiling rules, and the sideloading traps
+- [CONTRIBUTING](https://github.com/cocodedk/copenhagen-weather-tv/blob/main/CONTRIBUTING.md): local setup, commands, and the two rules that are easy to break
+- [CLAUDE.md](https://github.com/cocodedk/copenhagen-weather-tv/blob/main/CLAUDE.md): architecture, layer rules, and conventions for AI coding sessions
+
+## Website
+
+- [English](https://cocodedk.github.io/copenhagen-weather-tv/): live Copenhagen forecast, plus the app running in the browser
+- [Dansk](https://cocodedk.github.io/copenhagen-weather-tv/da/)
+- [فارسی](https://cocodedk.github.io/copenhagen-weather-tv/fa/)
+- [Live demo](https://cocodedk.github.io/copenhagen-weather-tv/demo/): the .wgt payload itself, at 1920x1080, drivable with the arrow keys
+
+## Source
+
+- [js/api.js](https://github.com/cocodedk/copenhagen-weather-tv/blob/main/js/api.js): Open-Meteo client, response reshaping, cache
+- [js/nav.js](https://github.com/cocodedk/copenhagen-weather-tv/blob/main/js/nav.js): D-pad focus engine using logical row/col coordinates rather than pixel geometry
+- [tools/compat-lint.mjs](https://github.com/cocodedk/copenhagen-weather-tv/blob/main/tools/compat-lint.mjs): the Chromium-ceiling lint
+- [build.sh](https://github.com/cocodedk/copenhagen-weather-tv/blob/main/build.sh): package, sign, install and launch over sdb
+
+## Optional
+
+- [config.xml](https://github.com/cocodedk/copenhagen-weather-tv/blob/main/config.xml): Tizen manifest, privileges and CSP
+- [tests/fixtures/forecast.json](https://github.com/cocodedk/copenhagen-weather-tv/blob/main/tests/fixtures/forecast.json): recorded API response the test suites run against

@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cocodedk.github.io/copenhagen-weather-tv/</loc>
+    <loc>https://tv-vejr.cocode.dk/</loc>
     <lastmod>__LASTMOD__</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://cocodedk.github.io/copenhagen-weather-tv/da/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/copenhagen-weather-tv/fa/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tv-vejr.cocode.dk/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://tv-vejr.cocode.dk/da/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://tv-vejr.cocode.dk/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tv-vejr.cocode.dk/"/>
   </url>
   <url>
-    <loc>https://cocodedk.github.io/copenhagen-weather-tv/da/</loc>
+    <loc>https://tv-vejr.cocode.dk/da/</loc>
     <lastmod>__LASTMOD__</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://cocodedk.github.io/copenhagen-weather-tv/da/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/copenhagen-weather-tv/fa/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tv-vejr.cocode.dk/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://tv-vejr.cocode.dk/da/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://tv-vejr.cocode.dk/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tv-vejr.cocode.dk/"/>
   </url>
   <url>
-    <loc>https://cocodedk.github.io/copenhagen-weather-tv/fa/</loc>
+    <loc>https://tv-vejr.cocode.dk/fa/</loc>
     <lastmod>__LASTMOD__</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://cocodedk.github.io/copenhagen-weather-tv/da/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://cocodedk.github.io/copenhagen-weather-tv/fa/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://cocodedk.github.io/copenhagen-weather-tv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tv-vejr.cocode.dk/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://tv-vejr.cocode.dk/da/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://tv-vejr.cocode.dk/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tv-vejr.cocode.dk/"/>
   </url>
 </urlset>

@@ -21,10 +21,10 @@ cached in localStorage, so a cold start with no network still draws a forecast.
 
 ## Website
 
-- [English](https://cocodedk.github.io/copenhagen-weather-tv/): live Copenhagen forecast, plus the app running in the browser
-- [Dansk](https://cocodedk.github.io/copenhagen-weather-tv/da/)
-- [فارسی](https://cocodedk.github.io/copenhagen-weather-tv/fa/)
-- [Live demo](https://cocodedk.github.io/copenhagen-weather-tv/demo/): the .wgt payload itself, at 1920x1080, drivable with the arrow keys
+- [English](https://tv-vejr.cocode.dk/): live Copenhagen forecast, plus the app running in the browser
+- [Dansk](https://tv-vejr.cocode.dk/da/)
+- [فارسی](https://tv-vejr.cocode.dk/fa/)
+- [Live demo](https://tv-vejr.cocode.dk/demo/): the .wgt payload itself, at 1920x1080, drivable with the arrow keys
 
 ## Source
 

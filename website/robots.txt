@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cocodedk.github.io/copenhagen-weather-tv/sitemap.xml
+Sitemap: https://tv-vejr.cocode.dk/sitemap.xml

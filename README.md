@@ -12,13 +12,13 @@ Location is hardcoded to 55.6761 N, 12.5683 E, timezone `Europe/Copenhagen`.
 
 ## Website
 
-- [English](https://cocodedk.github.io/copenhagen-weather-tv/)
-- [Dansk](https://cocodedk.github.io/copenhagen-weather-tv/da/)
-- [فارسی (Persian)](https://cocodedk.github.io/copenhagen-weather-tv/fa/)
+- [English](https://tv-vejr.cocode.dk/)
+- [Dansk](https://tv-vejr.cocode.dk/da/)
+- [فارسی (Persian)](https://tv-vejr.cocode.dk/fa/)
 
 Each page shows the live Copenhagen forecast and embeds the app itself, running at
 1920×1080 and drivable with the arrow keys:
-[**open the demo**](https://cocodedk.github.io/copenhagen-weather-tv/demo/).
+[**open the demo**](https://tv-vejr.cocode.dk/demo/).
 
 There is no release artifact to download. A `.wgt` must be signed with *your* author
 certificate and, on many retail sets, bound to your TV's DUID, so a prebuilt package

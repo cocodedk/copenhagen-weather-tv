@@ -44,6 +44,9 @@ a:hover { text-decoration: underline; }
 
 .shell { width: 100%; max-width: var(--shell); margin: 0 auto; padding: 0 20px; }
 
+/* The cocode.dk frame lines up with this column; keep the gutters in step. */
+cocode-head, cocode-foot { --cocode-max: var(--shell); --cocode-gutter: 20px; }
+
 /* micro-label: the second half of the type system */
 .eyebrow {
   font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
@@ -56,28 +59,6 @@ code {
   font-size: 0.86em; background: rgba(0, 0, 0, 0.3);
   padding: 1px 5px; border-radius: 4px; color: var(--wet);
 }
-
-/* ---------------- top bar ---------------- */
-.topbar { padding: 12px 0; border-bottom: 1px solid var(--line); }
-/* Wraps rather than shrinks: the wordmark plus three language links exceed a
-   360px viewport, and neither can go below its content width. */
-.topbar > .shell {
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 2px 12px;
-}
-.topbar nav { margin-inline-start: -11px; }
-.wordmark {
-  font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--fg); display: flex; align-items: center; gap: 9px;
-}
-.wordmark svg { width: 20px; height: 20px; color: var(--amber); flex: none; }
-.topbar nav { display: flex; align-items: center; gap: 6px; }
-.topbar nav a {
-  font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--fg-dim); padding: 9px 11px; border-radius: 999px; min-height: 44px;
-  display: inline-flex; align-items: center;
-}
-.topbar nav a:hover { color: var(--fg); background: var(--tile); text-decoration: none; }
 
 /* ---------------- hero: the television ---------------- */
 .hero { position: relative; padding: 40px 0 8px; text-align: center; }
@@ -317,14 +298,14 @@ footer a { color: var(--fg-dim); }
 [dir="rtl"] { --font: 'Vazirmatn', system-ui, sans-serif; }
 [dir="rtl"] body { font-weight: 400; }
 [dir="rtl"] h1, [dir="rtl"] .now-temp { letter-spacing: 0; }
-[dir="rtl"] .eyebrow, [dir="rtl"] .wordmark, [dir="rtl"] .topbar nav a,
+[dir="rtl"] .eyebrow,
 [dir="rtl"] .btn, [dir="rtl"] .keycap, [dir="rtl"] .ntile dt,
 [dir="rtl"] .hour-t, [dir="rtl"] .tv-status {
   letter-spacing: 0; text-transform: none;
 }
-/* Latin-only bits (temperatures, code, the wordmark) must stay LTR inside RTL. */
+/* Latin-only bits (temperatures, code) must stay LTR inside RTL. */
 [dir="rtl"] .now-temp, [dir="rtl"] .ntile dd, [dir="rtl"] .day-t,
-[dir="rtl"] .hour-d, [dir="rtl"] pre, [dir="rtl"] .wordmark {
+[dir="rtl"] .hour-d, [dir="rtl"] pre {
   direction: ltr; unicode-bidi: isolate;
 }
 [dir="rtl"] .tv-screen, [dir="rtl"] .now-place { text-align: start; }

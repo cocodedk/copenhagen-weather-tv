@@ -34,6 +34,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;500;600;700&display=swap">
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="https://brand.cocode.dk/v1.css">
+<script type="module" src="https://brand.cocode.dk/v1.js"></script>
 
 <script type="application/ld+json">
 {
@@ -60,19 +62,15 @@
 <body>
 <!--SPRITE-->
 
-<header class="topbar">
-  <div class="shell">
-    <span class="wordmark">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#i-partly"/></svg>
-      Copenhagen Weather
-    </span>
-    <nav aria-label="Sprog og kildekode">
-      <a href="../" hreflang="en">English</a>
-      <a href="../fa/" hreflang="fa">فارسی</a>
-      <a href="https://github.com/cocodedk/copenhagen-weather-tv">GitHub</a>
-    </nav>
-  </div>
-</header>
+<!-- The cocode.dk family frame. Without JavaScript its children show instead: a way home
+     and the language/GitHub links. It replaces the site's own top bar (wordmark + nav). -->
+<cocode-head project="Copenhagen Weather" accent="#ffd257" on-accent="#10162f" dark
+              links="GitHub:https://github.com/cocodedk/copenhagen-weather-tv">
+  <a href="https://cocode.dk">cocode.dk</a>
+  <a href="../" hreflang="en">EN</a>
+  <span class="on">DA</span>
+  <a href="../fa/" hreflang="fa">FA</a>
+</cocode-head>
 
 <main>
   <div class="hero">
@@ -192,12 +190,18 @@ TIZEN_PROFILE=MitTV ./build.sh --install 192.168.0.201</pre>
   </section>
 </main>
 
+<!-- Copyright, "lavet af" and cocode.dk now come from cocode-foot below; the
+     Open-Meteo data credit and the Apache-2.0 mention are neither author,
+     copyright nor a source-code link, so they stay. -->
 <footer>
   <div class="shell">
-    <p>Apache-2.0 &nbsp;|&nbsp; © 2026 <a href="https://cocode.dk" target="_blank" rel="noreferrer">Cocode</a> &nbsp;|&nbsp; Lavet af <a href="https://linkedin.com/in/babakbandpey" target="_blank" rel="noreferrer">Babak Bandpey</a></p>
-    <p style="margin-top:6px">Prognose fra <a href="https://open-meteo.com" target="_blank" rel="noreferrer">Open-Meteo</a>.</p>
+    <p>Apache-2.0 &nbsp;|&nbsp; Prognose fra <a href="https://open-meteo.com" target="_blank" rel="noreferrer">Open-Meteo</a>.</p>
   </div>
 </footer>
+
+<cocode-foot repo="cocodedk/copenhagen-weather-tv" dark>
+  <a href="https://cocode.dk">cocode.dk</a>
+</cocode-foot>
 
 <script src="../js/i18n/da.js"></script>
 <script src="../vendor/wmo.js"></script>
